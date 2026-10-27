@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CITY OPERATIONS</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">CITY OPERATIONS</div>
+          <h1>Municipal Operations Center</h1>
+        </div>
+        <div class="controls">
+          <div class="clock-card">
+            <span>TIME</span>
+            <strong id="clock">05:55</strong>
+          </div>
+          <div class="clock-card">
+            <span>WEATHER</span>
+            <strong id="weatherTag">CLEAR</strong>
+          </div>
+          <div class="clock-card">
+            <span>ALERT</span>
+            <strong id="alertTag">NORMAL</strong>
+          </div>
+          <div class="speed-buttons">
+            <button class="speed-btn" data-speed="0">PAUSE</button>
+            <button class="speed-btn active" data-speed="1">1x</button>
+            <button class="speed-btn" data-speed="2">2x</button>
+            <button class="speed-btn" data-speed="4">4x</button>
+            <button class="speed-btn" data-speed="8">8x</button>
+          </div>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="panel map-panel">
+          <div class="panel-header">
+            <div class="panel-title">CITY MAP</div>
+            <button id="sandboxBtn">SPAWN INCIDENT</button>
+          </div>
+          <svg id="cityMap" viewBox="0 0 980 620" aria-label="City map">
+            <g id="roadsLayer"></g>
+            <g id="incidentsLayer"></g>
+            <g id="camerasLayer"></g>
+            <g id="unitsLayer"></g>
+            <g id="vehiclesLayer"></g>
+          </svg>
+        </section>
+
+        <aside class="side-stack">
+          <section class="panel">
+            <div class="panel-header">
+              <div class="panel-title">INCIDENT QUEUE</div>
+            </div>
+            <div id="incidentList" class="list"></div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-header">
+              <div class="panel-title">DISPATCH</div>
+            </div>
+            <div id="dispatchPanel" class="dispatch-panel"></div>
+          </section>
+        </aside>
+
+        <section class="panel right-panel">
+          <div class="panel-header">
+            <div class="panel-title">OPERATIONS</div>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-box">
+              <span>VEHICLES</span>
+              <strong id="vehicleCount">0</strong>
+            </div>
+            <div class="stat-box">
+              <span>INCIDENTS</span>
+              <strong id="incidentCount">0</strong>
+            </div>
+            <div class="stat-box">
+              <span>TRAFFIC</span>
+              <strong id="trafficDelay">0</strong>
+            </div>
+            <div class="stat-box">
+              <span>POWER</span>
+              <strong id="powerState">3/3</strong>
+            </div>
+          </div>
+
+          <div class="camera-card">
+            <div class="camera-header">SELECTED CAMERA</div>
+            <div id="cameraInfo">No camera selected</div>
+          </div>
+
+          <div class="system-grid">
+            <div class="system-box">
+              <div class="system-label">WEATHER</div>
+              <div class="weather-swatches">
+                <button class="weather-btn active" data-weather="clear">CLEAR</button>
+                <button class="weather-btn" data-weather="rain">RAIN</button>
+                <button class="weather-btn" data-weather="fog">FOG</button>
+                <button class="weather-btn" data-weather="storm">STORM</button>
+              </div>
+            </div>
+
+            <div class="system-box">
+              <div class="system-label">ROAD CONTROL</div>
+              <button id="closeRoadBtn" class="wide-btn">CLOSE SELECTED ROAD</button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
